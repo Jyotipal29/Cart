@@ -1,0 +1,29 @@
+.navbar{
+    background-color: blue;
+    height: 70px;
+}
+.logo{
+    color:#fff;
+    font-size: 30px;
+}
+.input{
+height: 30px;
+border:2px solid #fff;
+margin:2px;
+box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+.search-btn{
+    height: 30px;
+    border:2px solid #fff;
+}
+.conatiner{
+    max-width: 1100px;
+    margin:0 auto;
+}
+
+.flex{
+    height: 100%;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
