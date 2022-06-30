@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./home.css";
 import SingleItem from "../singleItem/SingleItem";
 import { useCart } from "../../context/Context";
@@ -10,6 +10,7 @@ const Home = () => {
     // productState: { byStock, byFastDelivery, sort, searchQuery },
     productDispatch,
   } = useCart();
+
   // console.log("13", productState);
 
   // const transformProducts = () => {

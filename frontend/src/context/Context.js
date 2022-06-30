@@ -36,7 +36,7 @@ export const CartProvider = ({ children }) => {
     products: [],
   });
   // console.log(apiData);
-  console.log(productState.products);
+  // console.log(productState.products);
   // const [wishlistState, wishlistDispatch] = useReducer(wishlistReducer, {
   //   wishlist: [],
   // });

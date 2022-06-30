@@ -1,35 +1,42 @@
 import React from "react";
 import "./header.css";
 import { useCart } from "../../context/Context";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import User from "../user/User";
+import { logoutUser } from "../../context/action";
+import { useUser } from "../../context/UserContext";
+
 const Header = () => {
-  // const {
-  //   state: { cart },
-  //   productDispatch,
-  // } = useCart();
+  const { user } = useUser();
+  console.log(user);
+  const navigate = useNavigate();
+
+  const onLogout = async () => {
+    const data = await logoutUser();
+    navigate("/login");
+  };
   return (
     <nav className="navbar">
       <div className="container flex">
         <div className="logo">
-          <Link to="/">shopping cart</Link>
-        </div>
-        {/* <div className="search">
-          <input
-            className="input"
-            placeholder="Search for product"
-            onChange={(e) =>
-              productDispatch({
-                type: "FILTER_BY_SEARCH",
-                payload: e.target.value,
-              })
-            }
-          />
-          <button className="search-btn">Search</button>
+          <Link to="/home">shopping cart</Link>
         </div>
 
-        <h3>
-          <Link to="/cart">{cart.length}</Link>
-         </h3> */}
+        {user.name ? (
+          <div>
+            <button onClick={onLogout}>logout</button>
+            <Link to="/user">{user.name}</Link>
+          </div>
+        ) : (
+          <div>
+            <Link to="/login" style={{ marginRight: "30px" }}>
+              login
+            </Link>
+            <Link to="/register" style={{ marginRight: "30px" }}>
+              register
+            </Link>
+          </div>
+        )}
       </div>
     </nav>
   );

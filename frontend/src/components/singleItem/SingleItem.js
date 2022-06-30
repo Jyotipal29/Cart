@@ -2,7 +2,7 @@ import React from "react";
 import { useCart } from "../../context/Context";
 import "./single.css";
 const SingleItem = ({ item }) => {
-  console.log(item);
+  // console.log(item);
 
   // console.log(item);
   // const {
